@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coming Soon — Avyntro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav-band">
+  <div class="site-nav">
+    <a class="brand" href="index.html">Avyntro</a>
+    <div class="nav-links">
+      <a href="index.html#modules">Product</a>
+      <a href="erp.html">ERP</a>
+      <a href="hrms.html">HRMS</a>
+      <a href="coming-soon.html" aria-current="page">Coming Soon</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="request-access.html">Request Early Access</a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">Menu</button>
+  </div>
+  <div class="nav-mobile">
+    <a href="index.html#modules">Product</a>
+    <a href="erp.html">ERP</a>
+    <a href="hrms.html">HRMS</a>
+    <a href="coming-soon.html">Coming Soon</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="request-access.html">Request Early Access</a>
+  </div>
+
+  <div class="page-header">
+    <div class="wrap">
+      <span class="tag hero-eyebrow">// What's next</span>
+      <h1>CRM, NexSupport and Projects are on the way.</h1>
+      <p>Built on the same ledger and the same login as ERP and HRMS — not a separate product bolted on later.</p>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <div class="card-grid" style="margin-bottom:48px;">
+        <div class="m-card soon">
+          <span class="badge-soon">Soon</span>
+          <div class="m-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></svg></div>
+          <h3>CRM</h3>
+          <p>Track pipeline and deals against the same customers your GST invoices already know about — no separate customer list to keep in sync.</p>
+        </div>
+        <div class="m-card soon">
+          <span class="badge-soon">Soon</span>
+          <div class="m-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.7"><path d="M4 5h16v11H9l-5 4V5z"/></svg></div>
+          <h3>NexSupport</h3>
+          <p>A helpdesk for customers and for your own team, with tickets that can reference the orders and invoices behind them.</p>
+        </div>
+        <div class="m-card soon">
+          <span class="badge-soon">Soon</span>
+          <div class="m-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg></div>
+          <h3>Projects</h3>
+          <p>Plans, tasks and delivery tracking for client and internal work, with costs that can roll up to the same cost centres as the rest of your books.</p>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h2 style="font-size:19px; margin-bottom:6px;">Get notified at launch</h2>
+        <p style="color:var(--fg-muted); font-size:14px; margin-bottom:20px;">Leave your email and tell us which module you care about most — we'll let you know the moment it's ready.</p>
+        <div class="form-status" id="notify-status"></div>
+        <form id="notify-form" novalidate>
+          <div class="field">
+            <label for="notify-email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="notify-email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label>Which module?</label>
+            <div class="checkbox-row"><input type="checkbox" id="nm-crm" name="modules" value="CRM"><label for="nm-crm">CRM</label></div>
+            <div class="checkbox-row"><input type="checkbox" id="nm-nexsupport" name="modules" value="NexSupport"><label for="nm-nexsupport">NexSupport</label></div>
+            <div class="checkbox-row"><input type="checkbox" id="nm-projects" name="modules" value="Projects"><label for="nm-projects">Projects</label></div>
+          </div>
+          <button type="submit" class="btn btn-teal btn-block">Notify Me</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="erp.html">ERP</a>
+        <a href="hrms.html">HRMS</a>
+        <a href="coming-soon.html">Coming Soon</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="request-access.html">Request Early Access</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-top">
+      <div>© 2026 Avyntro</div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <span>info@avyntro.com</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

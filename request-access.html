@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Request Early Access — Avyntro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav-band">
+  <div class="site-nav">
+    <a class="brand" href="index.html">Avyntro</a>
+    <div class="nav-links">
+      <a href="index.html#modules">Product</a>
+      <a href="erp.html">ERP</a>
+      <a href="hrms.html">HRMS</a>
+      <a href="coming-soon.html">Coming Soon</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="nav-cta" href="request-access.html" aria-current="page">Request Early Access</a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Toggle menu">Menu</button>
+  </div>
+  <div class="nav-mobile">
+    <a href="index.html#modules">Product</a>
+    <a href="erp.html">ERP</a>
+    <a href="hrms.html">HRMS</a>
+    <a href="coming-soon.html">Coming Soon</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="request-access.html">Request Early Access</a>
+  </div>
+
+  <div class="page-header">
+    <div class="wrap">
+      <span class="tag hero-eyebrow">// Early access</span>
+      <h1>Tell us about your business.</h1>
+      <p>We're onboarding manufacturing businesses in small batches so we can get the ERP and HRMS setup right for each one. Leave your details and we'll be in touch to schedule a walkthrough.</p>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <div class="form-card">
+        <div class="form-status" id="request-access-status"></div>
+        <form id="request-access-form" novalidate>
+          <div class="field">
+            <label for="ra-name">Your name <span aria-hidden="true">*</span></label>
+            <input type="text" id="ra-name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="ra-email">Work email <span aria-hidden="true">*</span></label>
+            <input type="email" id="ra-email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="ra-company">Company <span aria-hidden="true">*</span></label>
+            <input type="text" id="ra-company" name="company" required autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="ra-team-size">Team size</label>
+            <select id="ra-team-size" name="teamSize">
+              <option value="1-10">1-10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-200">51-200</option>
+              <option value="200+">200+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Which modules are you most interested in?</label>
+            <div class="checkbox-row"><input type="checkbox" id="ra-erp" name="modules" value="ERP" checked><label for="ra-erp">ERP</label></div>
+            <div class="checkbox-row"><input type="checkbox" id="ra-hrms" name="modules" value="HRMS"><label for="ra-hrms">HRMS</label></div>
+            <div class="checkbox-row"><input type="checkbox" id="ra-crm" name="modules" value="CRM (coming soon)"><label for="ra-crm">CRM (coming soon)</label></div>
+          </div>
+          <div class="field">
+            <label for="ra-message">Anything we should know? <span class="hint">(optional)</span></label>
+            <textarea id="ra-message" name="message" placeholder="e.g. what you're using today, team size, timeline"></textarea>
+          </div>
+          <button type="submit" class="btn btn-amber btn-block" style="color:#1A1304;">Request Early Access</button>
+          <p class="required-note">* Required fields. We'll only use this to reach out about early access.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>Product</h4>
+        <a href="erp.html">ERP</a>
+        <a href="hrms.html">HRMS</a>
+        <a href="coming-soon.html">Coming Soon</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="request-access.html">Request Early Access</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-top">
+      <div>© 2026 Avyntro</div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <span>info@avyntro.com</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>

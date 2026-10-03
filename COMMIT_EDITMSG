@@ -1,0 +1,8 @@
+Avyntro marketing site: static HTML/CSS/JS, ready for Vercel
+
+9-page marketing site (home, ERP, HRMS, coming soon, about, contact,
+request access, privacy, terms). Single deliberate light theme.
+Request-access/contact forms are UI-only for now — no backend wired.
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_014XYYCDWvPCn9LYFMt7tUa3
