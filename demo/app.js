@@ -920,12 +920,15 @@ const dlgError = (msg) => {
   if (e) e.textContent = msg;
 };
 const closeDialog = () => document.querySelector("dialog")?.close();
+// In-page confirmation (browser confirm() boxes are blocked when the demo is embedded).
+function confirmThen(title, message, label, onConfirm) {
+  ui.pendingConfirm = onConfirm;
+  dialog(title, html`<p>${message}</p>`, { submitLabel: label, formName: "confirm" });
+}
 
 // ---------- actions ----------
 const ACTIONS = {
-  reset: () => {
-    if (confirm("Reset the demo to its original sample data? Your changes in this browser will be lost.")) resetDemo();
-  },
+  reset: () => confirmThen("Reset sample data?", "The demo goes back to its original sample data. Your changes in this browser will be lost.", "Reset", resetDemo),
   menu: (el) => {
     const s = document.getElementById("sidebar");
     const open = s.classList.toggle("open");
@@ -956,13 +959,13 @@ const ACTIONS = {
     render();
     toast(`Issued as ${inv.no} and posted to the ledger.`);
   },
-  "inv-delete": (el) => {
-    if (!confirm("Delete this draft?")) return;
-    state.invoices = state.invoices.filter((i) => i.id !== el.dataset.id);
-    act("invoice.draft_deleted");
-    save();
-    go("#/invoices");
-  },
+  "inv-delete": (el) =>
+    confirmThen("Delete this draft?", "The draft invoice will be removed. Issued invoices are never deleted.", "Delete draft", () => {
+      state.invoices = state.invoices.filter((i) => i.id !== el.dataset.id);
+      act("invoice.draft_deleted");
+      save();
+      go("#/invoices");
+    }),
   "inv-irn": (el) => {
     const inv = state.invoices.find((i) => i.id === el.dataset.id);
     inv.irn = L.demoIrn(state.tenant.gstin, inv.no, inv.date);
@@ -1100,7 +1103,8 @@ const ACTIONS = {
       await navigator.clipboard.writeText(link);
       toast("Invite link copied (demo link).");
     } catch {
-      prompt("Copy the invite link (demo link):", link);
+      dialog("Invite link", html`<label class="f">Copy this link (demo link) <input id="invite-link" value="${link}" readonly></label>`, { submitLabel: "Done", formName: "close" });
+      document.getElementById("invite-link")?.select();
     }
   },
   "invite-accept": (el) => {
@@ -1114,11 +1118,12 @@ const ACTIONS = {
   },
   "member-remove": (el) => {
     const m = state.team.find((x) => x.id === el.dataset.id);
-    if (!confirm(`Remove ${m.name || m.email} from the workspace?`)) return;
-    state.team = state.team.filter((x) => x.id !== m.id);
-    act("user.removed", m.email);
-    save();
-    render();
+    confirmThen(`Remove ${m.name || m.email}?`, "They lose access to this workspace straight away. Their past activity stays in the audit log.", "Remove", () => {
+      state.team = state.team.filter((x) => x.id !== m.id);
+      act("user.removed", m.email);
+      save();
+      render();
+    });
   },
   impersonate: (el) => {
     const t = state.tenants.find((x) => x.id === el.dataset.tenant);
@@ -1157,6 +1162,13 @@ function startImport(text, note) {
 
 // ---------- forms ----------
 const FORMS = {
+  confirm: () => {
+    const fn = ui.pendingConfirm;
+    ui.pendingConfirm = null;
+    closeDialog();
+    fn?.();
+  },
+  close: () => closeDialog(),
   invoice: (form, data, submitter) => {
     readInvoiceForm(form);
     const f = ui.inv;
