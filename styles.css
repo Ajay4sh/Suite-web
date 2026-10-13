@@ -81,7 +81,7 @@ p { margin: 0; }
 @media (min-width: 640px) { .site-nav { padding-inline: 48px; } }
 .brand { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--on-navy-fg); letter-spacing: -0.02em; }
 .nav-links { display: none; align-items: center; gap: 26px; }
-@media (min-width: 880px) { .nav-links { display: flex; } }
+@media (min-width: 1080px) { .nav-links { display: flex; } }
 .nav-links a { color: var(--on-navy-muted); font-size: 14px; }
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--teal); }
 .nav-cta {
@@ -93,7 +93,9 @@ p { margin: 0; }
   display: inline-flex; background: none; border: 1px solid var(--on-navy-border); color: var(--on-navy-fg);
   border-radius: 6px; padding: 8px 10px; font-size: 14px; cursor: pointer;
 }
-@media (min-width: 880px) { .nav-toggle { display: none; } }
+@media (min-width: 1080px) { .nav-toggle { display: none; } }
+/* Small phones: the menu already holds "Request Early Access", so drop the header button to make room. */
+@media (max-width: 520px) { .nav-cta { display: none; } }
 .nav-mobile {
   display: none; flex-direction: column; gap: 4px; padding: 12px 24px 20px; background: var(--navy-2);
 }
@@ -250,3 +252,8 @@ footer.site-footer { padding-block: 28px 48px; }
   color: var(--fg-muted); margin-bottom: 32px; background: var(--surface);
 }
 .draft-notice strong { color: var(--fg); }
+
+/* ---------- Roadmap groups (coming-soon page) ---------- */
+.roadmap-group { font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--fg-muted); margin: 8px 0 14px; font-family: var(--font-body); }
+/* Roadmap cards without an icon: keep titles clear of the "Soon" badge */
+.m-card.soon h3 { padding-right: 56px; }

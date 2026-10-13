@@ -13,7 +13,21 @@ To connect a custom domain later: Project → Settings → Domains → add `avyn
 
 ## Notes
 
-- `index.html` is the home page; `erp.html`, `hrms.html`, `coming-soon.html`, `about.html`, `contact.html`, `request-access.html`, `privacy.html`, `terms.html` are the other pages.
+- `index.html` is the home page; `erp.html`, `hrms.html`, `platform.html`, `coming-soon.html`, `about.html`, `contact.html`, `request-access.html`, `privacy.html`, `terms.html` are the other pages.
+- `erp.html` and `platform.html` list only features that are live in the product. Features still being built (multi-currency, recurring billing, fixed assets, budgets, cost centres, barcode scanning, 2FA, documents, eSign, WhatsApp, dashboard builder, Gantt) are marked **Soon** there and on `coming-soon.html`. Move a feature out of "Soon" only once it ships.
+
+## Interactive demo (`demo/`)
+
+`demo/index.html` is a clickable ERP demo for prospects, built on a fictional business ("Shree Ganesh Engineering Works") with six months of sample data. It runs entirely in the browser: no server, no sign-up, and anything a visitor changes is saved only in their own browser ("Reset sample data" restores it). It is **not connected to the real product**.
+
+What works in it: GST invoices (CGST/SGST vs IGST by place of supply, item autocomplete, printable PDF, demo IRN, email preview, payments), item master and catalogue import with a review step, clients with interaction history, GSTR-1 data, GST liability, notices and GSTINs (with check-digit validation), bank reconciliation with auto-matching and session approval, double-entry journals with reversal, P&L, balance sheet, cash flow and trial balance, white-label branding and SMTP settings, team invites and roles, audit log, and super-admin module toggles and workspace sign-in.
+
+Honest limits shown in the demo itself: IRNs are not sent to the GST portal, no emails are sent, and PDF/Word catalogue uploads are replaced by a sample catalogue (text/CSV files are read for real).
+
+- `demo/ledger.js` – accounting engine (money in paise, GST, reports, matching)
+- `demo/store.js` – actions and the sample data
+- `demo/app.js`, `demo/demo.css` – the screens
+- Tests: `node --test demo/tests/ledger.test.mjs` (needs Node 22+)
 - `styles.css` is a single deliberate light theme (no dark-mode variant) — do not reintroduce a `prefers-color-scheme: dark` block.
 - The "Request Early Access" and "Contact" forms in `site.js` are currently **not wired to any backend** — submitting shows a message pointing the visitor to email `info@avyntro.com` directly. To make them actually receive submissions, swap in a form backend (e.g. Formspree, Web3Forms, or a small serverless function that emails you) and update `wireDbForm`/`getDb` in `site.js` accordingly.
 - `privacy.html` and `terms.html` are explicit placeholders — real legal copy needs to be drafted and reviewed before this goes fully public.
