@@ -1,0 +1,25 @@
+# Avyntro
+
+> Avyntro is an ERP and HRMS suite for manufacturing businesses in India. GST invoicing, GST compliance, bank reconciliation, double-entry accounting, financial reports and HR run on one ledger under one login. Avyntro is in early access and is onboarding businesses in small batches.
+
+Contact: info@avyntro.com
+
+## Live today
+
+- [ERP](https://avyntro.com/erp.html): GST tax invoices with PDF, e-invoice IRN and email; product and item master with HSN/SAC codes; catalogue import from PDF or Word with a review step; GSTR-1 data, GST liability, filing notices and multiple GSTINs; clients with interaction history; bank reconciliation with automatic matching and session approval; double-entry journal entries; profit and loss, balance sheet, cash flow and trial balance.
+- [HRMS](https://avyntro.com/hrms.html): employees and org chart, attendance and leave, payroll and TDS, expenses, recruitment, performance and appraisals, onboarding.
+- [Platform](https://avyntro.com/platform.html): white-label branding with your own email sending (SMTP), role-based team access with invites, a full audit log, and super-admin workspace controls.
+
+## Coming soon (not yet available)
+
+- [Roadmap](https://avyntro.com/coming-soon.html): CRM pipeline, NexSupport (helpdesk), Projects with Gantt charts, multi-currency, recurring billing, fixed assets, budgets, cost centres, barcode scanning, two-factor sign-in, documents, eSign, WhatsApp notifications and a dashboard builder.
+
+## Try it
+
+- [Interactive demo](https://avyntro.com/demo/index.html): runs in the browser on a fictional sample business with no sign-up. It is not connected to the real product: it does not send IRNs to the GST portal or send emails.
+- [Request early access](https://avyntro.com/request-access.html)
+
+## Company
+
+- [About](https://avyntro.com/about.html)
+- [Contact](https://avyntro.com/contact.html)

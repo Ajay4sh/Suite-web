@@ -28,6 +28,15 @@ Honest limits shown in the demo itself: IRNs are not sent to the GST portal, no 
 - `demo/store.js` – actions and the sample data
 - `demo/app.js`, `demo/demo.css` – the screens
 - Tests: `node --test demo/tests/ledger.test.mjs` (needs Node 22+)
+## SEO and AI visibility
+
+- Canonical domain is `https://avyntro.com`. Every page has its own title, meta description, canonical URL, Open Graph/Twitter tags and JSON-LD (Organization, WebSite, plus SoftwareApplication and FAQPage on the home page and BreadcrumbList elsewhere). If the domain changes, search-and-replace `https://avyntro.com` across the HTML, `robots.txt`, `sitemap.xml` and `llms.txt`.
+- The FAQPage JSON-LD on `index.html` mirrors the visible FAQ. If you edit the FAQ, re-run the same edit in the JSON-LD (or regenerate it) so they stay identical.
+- `robots.txt` allows search engines and AI assistant crawlers. To opt out of one, change its `Allow: /` to `Disallow: /`.
+- `sitemap.xml` lists the public pages; update `lastmod` when a page changes. `privacy.html`, `terms.html`, `404.html` and `demo/` are `noindex` and left out. Remove `noindex` from privacy/terms once real legal copy is published.
+- `llms.txt` is a plain summary of the product for AI assistants. Keep it factual and move features from "Coming soon" to "Live today" only once they ship.
+- Screenshots in `assets/img/demo-*.jpg` are taken from the demo; `og-avyntro.jpg` (1200×630) is the social share image.
+
 - `styles.css` is a single deliberate light theme (no dark-mode variant) — do not reintroduce a `prefers-color-scheme: dark` block.
 - The "Request Early Access" and "Contact" forms in `site.js` are currently **not wired to any backend** — submitting shows a message pointing the visitor to email `info@avyntro.com` directly. To make them actually receive submissions, swap in a form backend (e.g. Formspree, Web3Forms, or a small serverless function that emails you) and update `wireDbForm`/`getDb` in `site.js` accordingly.
 - `privacy.html` and `terms.html` are explicit placeholders — real legal copy needs to be drafted and reviewed before this goes fully public.

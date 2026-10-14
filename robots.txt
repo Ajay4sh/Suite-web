@@ -1,0 +1,34 @@
+# Avyntro — crawler rules
+# Search engines and AI assistants are allowed so Avyntro can be found and
+# cited in answers. To opt out of an AI crawler, change its "Allow: /" to
+# "Disallow: /".
+
+User-agent: *
+Allow: /
+
+# AI search and assistant crawlers (allowed by choice)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://avyntro.com/sitemap.xml
